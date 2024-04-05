@@ -31,32 +31,37 @@ class WebScraper:
         })
 
         chrome_options.accept_untrusted_certs = True
+        chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument('--ignore-certificate-errors')  # Equivalent to setAcceptInsecureCerts(true)
         # chrome_options.add_argument('--blink-settings=imagesEnabled=false')
         webdriver_service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
+        driver.implicitly_wait(20)
         return driver
 
     # Scrape the website
     def scrape_website(self, url):
         try:
-            self.driver.maximize_window()
+            self.driver.set_window_size(1920, 1080)
             self.driver.get(url)
             # Wait for API requests and complete show on the page
             username_element = self.driver.find_element(By.ID, "userName")
             username_element.send_keys("Angelab@getdelmar.com")
             self.driver.execute_script(f"""document.getElementById('usernameSubmit').click()""")
+            print(1)
             self.wait.until(   
                 lambda d: d.execute_script("""return document.getElementById("password") != undefined""")
             )
             password_element = self.driver.find_element(By.ID, "password")
             password_element.send_keys("Liamb0218.")
+            print(2)
             self.driver.execute_script(f"""document.getElementsByClassName("ant-btn ant-btn-primary Login-Form-SubmitButton margin-top-lg BTButton")[0].click()""")
             self.wait.until(   
                 lambda d: d.execute_script("""return document.getElementsByClassName('FeedItem').length > 0""")
             )
+            print(3)
             feed_items = self.driver.execute_script(f"""return document.getElementsByClassName("FeedItem")""")
             for i in range(len(feed_items)):
                 title = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByTagName('h4')[0].textContent""")
