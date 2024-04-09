@@ -1,9 +1,3 @@
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -15,6 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from multiprocessing import Process
 import time
+import subprocess
+import os
 
 class WebScraper:
     # Create a WebScraper instance
@@ -24,18 +20,19 @@ class WebScraper:
 
     # Init the WebScraper instance
     def initialize_driver(self):
+        command = [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--user-data-dir=C:/SeleniumChromeProfile",
+        "--remote-debugging-port=9222"
+        ]
+        subprocess.Popen(command)
+    
         chrome_options = Options()
-        chrome_options.add_experimental_option("prefs", {
-            # "profile.managed_default_content_settings.images": 2,  # Disable images
-            "profile.managed_default_content_settings.stylesheets": 2,  # Disable CSS
-        })
-
         chrome_options.accept_untrusted_certs = True
-        chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-dev-shm-usage")
-        chrome_options.add_argument('--ignore-certificate-errors')  # Equivalent to setAcceptInsecureCerts(true)
-        # chrome_options.add_argument('--blink-settings=imagesEnabled=false')
+        chrome_options.add_argument('--ignore-certificate-errors')
+        chrome_options.add_argument("--user-data-dir=C:/SeleniumChromeProfile")
+        chrome_options.add_experimental_option("debuggerAddress", "localhost:9222")
         webdriver_service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
         driver.implicitly_wait(20)
@@ -47,22 +44,24 @@ class WebScraper:
             self.driver.set_window_size(1920, 1080)
             self.driver.get(url)
             # Wait for API requests and complete show on the page
-            username_element = self.driver.find_element(By.ID, "userName")
-            username_element.send_keys("Angelab@getdelmar.com")
-            self.driver.execute_script(f"""document.getElementById('usernameSubmit').click()""")
-            print(1)
-            self.wait.until(   
-                lambda d: d.execute_script("""return document.getElementById("password") != undefined""")
-            )
-            password_element = self.driver.find_element(By.ID, "password")
-            password_element.send_keys("Liamb0218.")
-            print(2)
-            self.driver.execute_script(f"""document.getElementsByClassName("ant-btn ant-btn-primary Login-Form-SubmitButton margin-top-lg BTButton")[0].click()""")
+            # Login Process has commented
+            # username_element = self.driver.find_element(By.ID, "userName")
+            # username_element.send_keys("Angelab@getdelmar.com")
+            # self.driver.execute_script(f"""document.getElementById('usernameSubmit').click()""")
+            # self.wait.until(   
+                # lambda d: d.execute_script("""return document.getElementById("password") != undefined""")
+            # )
+            # password_element = self.driver.find_element(By.ID, "password")
+            # password_element.send_keys("Liamb0218.")
+            # self.driver.execute_script(f"""document.getElementsByClassName("ant-btn ant-btn-primary Login-Form-SubmitButton margin-top-lg BTButton")[0].click()""")
+            
+            # Wait for webpage loaded correctly
             self.wait.until(   
                 lambda d: d.execute_script("""return document.getElementsByClassName('FeedItem').length > 0""")
             )
-            print(3)
+            # Feed Items
             feed_items = self.driver.execute_script(f"""return document.getElementsByClassName("FeedItem")""")
+            
             for i in range(len(feed_items)):
                 title = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByTagName('h4')[0].textContent""")
                 date = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByClassName('margin-left-sm')[0].textContent""")
