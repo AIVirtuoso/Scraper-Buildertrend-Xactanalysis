@@ -12,6 +12,8 @@ import time
 import subprocess
 import re
 
+from database_handler import DatabaseHandler
+
 class WebScraper:
     # Create a WebScraper instance
     def __init__(self):
@@ -254,11 +256,22 @@ class WebScraper:
 
 def run_scraper():
     scraper = WebScraper()
-    # scraper.scrape_buildertrend_website("https://buildertrend.net/")
+    db = DatabaseHandler()
+    db.create_tables()
+
+    scraper.scrape_buildertrend_website("https://buildertrend.net/")
     scraper.scrape_xactanalysis_website("https://www.xactanalysis.com/")
-    scraper.close_driver()
     results = scraper.get_results()
-    print(results)
+
+    for result in results:
+        db.insert_customer(result['name'], result['phone'], result['address'])
+        for report in result['reports']:
+            db.insert_report(result['name'], report['title'], report['note'], report['date'])
+
+    scraper.close_driver()
+    db.close()
+
+    print("Scraping and storing data completed.")
 
 if __name__ == "__main__":
     run_scraper()
