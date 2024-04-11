@@ -8,6 +8,7 @@ from selenium.webdriver import ActionChains
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from multiprocessing import Process
+from concurrent.futures import ThreadPoolExecutor
 import time
 import subprocess
 import re
@@ -234,9 +235,11 @@ class WebScraper:
             # Scrape Source
             source = self.driver.execute_script("return arguments[0].querySelectorAll('td')[1].innerHTML", row)
             source = re.sub(r'\s+', ' ', source).strip().split('<br>')
+            source = '\n'.join(source)
             # Scrape Note
             note = self.driver.execute_script("return arguments[0].querySelectorAll('td')[2].querySelector('div').innerHTML", row)
             note = re.sub(r'\s+', ' ', note).strip().split('<br>')
+            note = '\n'.join(note)
             # Scrape data
             date = self.driver.execute_script("return arguments[0].querySelectorAll('td')[3].textContent", row)
             date = self.clear_text(date)
@@ -261,6 +264,7 @@ def run_scraper():
 
     scraper.scrape_buildertrend_website("https://buildertrend.net/")
     scraper.scrape_xactanalysis_website("https://www.xactanalysis.com/")
+
     results = scraper.get_results()
 
     for result in results:
