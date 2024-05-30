@@ -219,13 +219,23 @@ class WebScraper:
             customer_phone = self.driver.execute_script(f"""return document.getElementById('CellPhoneField-CellPhoneNumber').value""")
             customer_email = self.driver.execute_script(f"""return document.getElementById('primaryEmail.emailAddress') != null ? document.getElementById('primaryEmail.emailAddress').value : ''""")
 
+            # Close Customer Contact Modal
+            self.driver.execute_script(f"""document.querySelector('[data-testid="close"]').click()""")
+
+
             # Project Managers (Name + Phone Number)
             project_manager_len = self.driver.execute_script(f"""return document.getElementsByClassName('AbbreviateTitle').length - 1""")
-            for j in range(project_manager_len):
-                project_manager = self.driver.execute_script(f"""return document.getElementsByClassName('AbbreviateTitle')[{j + 1}].textContent""")
-                project_manager_phone = self.driver.execute_script(f"""return document.getElementsByClassName("ant-btn ant-btn-link ContactButton BTButton isolated NoShadow")[{j + 1}].textContent""")
-                print(f"project_manager: {project_manager}")
-                print(f"project_manager_phone: {project_manager_phone}")
+            if project_manager_len:
+                self.driver.execute_script(f"""return document.getElementsByClassName('AbbreviateTitle')[1].click()""")
+                project_manager_first_name = self.driver.execute_script(f"""return document.getElementById('firstName').value""")
+                project_manager_last_name = self.driver.execute_script(f"""return document.getElementById('lastName').value""")
+
+                project_manager_phone = self.driver.execute_script(f"""return document.getElementById('phone').value""")
+                project_manager_email = self.driver.execute_script(f"""return document.getElementById('primaryEmail.emailAddress').value""")
+                self.driver.execute_script(f"""document.querySelector('[data-testid="close"]').click()""")
+                self.wait.until(
+                    EC.invisibility_of_element_located((By.ID, 'phone'))
+                )
             
             # Address
             address = self.driver.execute_script(f"""return document.getElementsByClassName('Address')[0].textContent + ' ' + document.getElementsByClassName('Address')[1].textContent""")
@@ -245,11 +255,13 @@ class WebScraper:
                 'email': customer_email,
                 'address': address,
                 'claim_number': claim_number,
+                'manager_name': project_manager_first_name + ' ' + project_manager_last_name,
+                'manager_phone': project_manager_phone,
+                'manager_email': project_manager_email,
                 'reports': []
             }
 
-            # Close Customer Contact Modal
-            self.driver.execute_script(f"""document.querySelector('[data-testid="close"]').click()""")
+            print(res)
 
             # Feed Items
             feed_items = self.driver.execute_script(f"""return document.getElementsByClassName("FeedItem")""")
@@ -370,6 +382,8 @@ class WebScraper:
         customer_name = self.clear_text(customer_name)
         print(f"customer_name: {customer_name}")
 
+
+
         if "&" in customer_name:
             parts = customer_name.split("&")
             # Extract first name from the first part
@@ -428,9 +442,12 @@ class WebScraper:
             'phone': mobile_number,
             'address': address,
             'email': email,
-            'reports': note_list,
             'claim_number': claim_number,
-            'project_name': project_name
+            'project_name': project_name,
+            'manager_name': "Angela Bermudez",
+            'manager_phone': "+1 312 443 2120",
+            'manager_email': "angelab@getdelmar.com",
+            'reports': note_list
         })
         print("first_name", first_name)
         print("last_name", last_name)
