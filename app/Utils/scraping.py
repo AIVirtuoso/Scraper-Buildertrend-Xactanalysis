@@ -1,3 +1,4 @@
+import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -12,8 +13,9 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 import subprocess
 import re
+import json
 
-# from app.Utils.database_handler import DatabaseHandler
+from app.Utils.Requests import send_buildertrend, send_xactanalysis
 
 import socket
 import subprocess
@@ -32,6 +34,14 @@ def kill_process_on_port(port):
         if parts and parts[-1] == str(port):
             pid = parts[-2]
             subprocess.run(f"taskkill /PID {pid} /F", shell=True)
+
+def extract_length(content: str):
+    # Regular expression to find numbers
+    numbers = re.findall(r'\d+', content)
+
+    # Assuming there is at least one number, get the first one
+    number = numbers[0] if numbers else 0
+    return number
 
 class WebScraper:
     # Create a WebScraper instance
@@ -61,16 +71,21 @@ class WebScraper:
     
         chrome_options = Options()
         chrome_options.accept_untrusted_certs = True
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--user-data-dir=C:/SeleniumChromeProfile")
+        chrome_options.add_experimental_option("debuggerAddress", "localhost:9222")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument('--blink-settings=imagesEnabled=false')
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument('--ignore-certificate-errors')
-        chrome_options.add_argument("--user-data-dir=C:/SeleniumChromeProfile")
-        chrome_options.add_experimental_option("debuggerAddress", "localhost:9222")
+        # prefs = {"profile.managed_default_content_settings.images": 2}
+        # chrome_options.add_experimental_option("prefs", prefs)
         webdriver_service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=webdriver_service, options=chrome_options)
+        # driver.maximize_window()
         driver.implicitly_wait(5)
         return driver
+    
     
 ##############BuilderTrend################
     # Scrape the buildertrend website
@@ -104,6 +119,10 @@ class WebScraper:
                 lambda d: d.execute_script("""return document.getElementsByClassName('ItemRowJobName flex-grow-1').length > 0""")
             )
 
+            # Get the content that contains the lenthg of list (e.g: 'All 50 Listed Jobs')
+            length_content = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[0].textContent""")
+            total = extract_length(length_content)
+
             # Get the first job content from the list
             job_content = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[1].textContent""")
 
@@ -112,38 +131,51 @@ class WebScraper:
 
             # Counter for scroll down
             counter = 0
-            while 1:
-                print("========================counter========================", counter)
-                # if counter == 3:
-                #     break
-                time.sleep(1)
-                # Scrape all necessary information from the job
-                self.scrape_listed_job()
+            send_buildertrend(total, 0)
 
-                # Current list existing job counts
-                job_len = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1').length""")
-                for j in range(job_len):
-                    job_text = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j}].textContent""")
-                    # Check if there's job list on there
-                    if job_text == job_content:
+            while 1:
+                try:
+                    print("========================counter========================", counter)
+                    # if counter == 15:
+                    #     break
+                    time.sleep(1)
+                    # Scrape all necessary information from the job
+                    self.scrape_listed_job()
+                    send_buildertrend(total, counter + 1)
+                    self.wait.until(   
+                        lambda d: d.execute_script("""return document.getElementsByClassName('ItemRowJobName flex-grow-1').length > 0""")
+                    )
+                    # Current list existing job counts
+                    job_len = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1').length""")
+                    for j in range(job_len):
+                        job_text = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j}].textContent""")
+                        # Check if there's job list on there
+                        print("job_text ++", job_text)
+
+                        if job_text == job_content:
+                            counter = counter + 1
+                            break
+                    # Check if it is at the end of the part
+                    if j == job_len - 1:
                         break
-                # Check if it is at the end of the part
-                if j == job_len - 1:
-                    break
+                    
+                    # Extract the next job content from the list
+                    job_content = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j + 1}].textContent""")
+                    print("job_content --", job_content)
+                    # Navigate to the following job
+                    self.driver.execute_script(f"""document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j + 1}].click()""")
+                    
+                    # Scroll down the job list
+                    self.driver.execute_script(f"""document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0].scrollTo(0, 32 * {counter})""")
+                    
+                    # Increase the counter for next scroll adjustment
+                except Exception as ex:
+                    print(ex)
+            send_buildertrend(counter + 1, counter + 1)
                 
-                # Extract the next job content from the list
-                job_content = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j + 1}].textContent""")
                 
-                # Navigate to the following job
-                self.driver.execute_script(f"""document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j + 1}].click()""")
-                
-                # Scroll down the job list
-                self.driver.execute_script(f"""document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0].scrollTo(0, 30 * {counter})""")
-                
-                # Increase the counter for next scroll adjustment
-                counter = counter + 1
         except Exception as e:
-            print(e)
+            print("ending error:", e)
 
     # Scrape detailed content of each job
     def scrape_listed_job(self):
@@ -198,13 +230,13 @@ class WebScraper:
             # Address
             address = self.driver.execute_script(f"""return document.getElementsByClassName('Address')[0].textContent + ' ' + document.getElementsByClassName('Address')[1].textContent""")
             
-            print(f"claim_number: {claim_number}")
-            print(f"project_name: {project_name}")
+            # print(f"claim_number: {claim_number}")
+            # print(f"project_name: {project_name}")
             print(f"first_name: {first_name}")
             print(f"last_name: {last_name}")
-            print(f"customer_phone: {customer_phone}")
-            print(f"customer_email: {customer_email}")
-            print(f"address: {address}")
+            # print(f"customer_phone: {customer_phone}")
+            # print(f"customer_email: {customer_email}")
+            # print(f"address: {address}")
             res = {
                 'first_name': first_name,
                 'last_name': last_name,
@@ -233,10 +265,10 @@ class WebScraper:
                     # Daily Note
                     note = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByClassName('ant-card-body')[0].textContent""")
                     
-                    print(f"title: {title}")
-                    print(f"date: {date}")
-                    print(f"sender: {sender}")
-                    print(f"note: {note}")
+                    # print(f"title: {title}")
+                    # print(f"date: {date}")
+                    # print(f"sender: {sender}")
+                    # print(f"note: {note}")
                     res['reports'].append({
                         'title': title,
                         'date': date,
@@ -297,11 +329,12 @@ class WebScraper:
             claim_list = self.driver.execute_script(f"""return document.querySelector('[id="spage0"]').querySelectorAll('li')""")
             claim_length = len(claim_list)
             print(f"claim_length: {claim_length}")
+            send_xactanalysis(claim_length-1, 0)
             for index in range(1, claim_length):
                 try:
-                    if index <=5:
-                        continue
-                    # if index >= 6:
+                    # if index <=5:
+                    #     continue
+                    # if index >= 10:
                     #     break
                     print(f"index: {index}")
                     # Scrape each claim
@@ -310,6 +343,7 @@ class WebScraper:
                     self.driver.execute_script(f"""document.getElementById('header-home-link').click()""")
                 except Exception as e:
                     print(e)
+                send_xactanalysis(claim_length-1, index)
         except Exception as e:
             # Close the webdriver
             print(e)
@@ -439,22 +473,36 @@ class WebScraper:
     def close_driver(self):
         self.driver.close()
 
-def run_scraper(builder_user, builder_pass, xact_user, xact_pass):
+def run_scraper(source, builder_user, builder_pass, xact_user, xact_pass):
     scraper = WebScraper(builder_user, builder_pass, xact_user, xact_pass)
     # db = DatabaseHandler()
     # db.create_tables()
+    if source == "BuilderTrend":    
+        scraper.scrape_buildertrend_website("https://buildertrend.net/")
+        time.sleep(3)
+        scraper.close_driver()
+    else:
+        scraper = WebScraper(builder_user, builder_pass, xact_user, xact_pass)
+        scraper.scrape_xactanalysis_website("https://www.xactanalysis.com/")
+        scraper.close_driver()
 
-    # scraper.scrape_buildertrend_website("https://buildertrend.net/")
-    scraper.scrape_xactanalysis_website("https://www.xactanalysis.com/")
-    scraper.close_driver()
     results = scraper.get_results()
 
-    # for result in results:
-    #     db.insert_customer(result['name'], result['phone'], result['address'])
-    #     for report in result['reports']:
-    #         db.insert_report(result['name'], report['title'], report['note'], report['date'])
-    # db.close()
 
+    # print(results)
     print("Scraping and storing data completed.")
     
-    return results
+    with open("scraped_results.json", 'w') as json_file:
+        # Write the dictionary to the file as JSON  
+        json.dump(results, json_file, indent=4)
+
+    data = {}
+    with open("scraped_results.json", 'r') as file:
+        data = json.load(file)
+    print(data)
+    url = 'https://backend.getdelmar.com/api/v1/get-scraped-result'
+
+    # Send a POST request to the FastAPI endpoint with the JSON data
+    response = requests.post(url, json=data)
+        
+    return True

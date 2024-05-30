@@ -9,6 +9,7 @@ from pydantic import BaseModel
 load_dotenv()
 
 class AuthModel(BaseModel):
+    source: str
     builder_user: str
     builder_pass: str
     xact_user: str
@@ -17,7 +18,7 @@ class AuthModel(BaseModel):
 router = APIRouter()
 
 @router.post('/notification')
-def get_notification(auth: AuthModel):
+async def get_notification(auth: AuthModel):
     print("start")
-    print(auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)
-    return run_scraper(auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)
+    print(auth.source, auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)
+    run_scraper(auth.source, auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)

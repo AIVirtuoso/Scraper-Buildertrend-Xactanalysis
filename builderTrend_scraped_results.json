@@ -1,0 +1,887 @@
+[
+    {
+        "first_name": "Margarita",
+        "last_name": "Arreola",
+        "project_name": "State Farm/SDG",
+        "phone": "+1 708 370 1782",
+        "email": "mago91@comcast.net",
+        "address": "10152 Saddle Creek Drive Dyer, IN 46311",
+        "claim_number": "1454Z422T",
+        "reports": []
+    },
+    {
+        "first_name": "Maneesh",
+        "last_name": "Bashin",
+        "project_name": "N/A",
+        "phone": "",
+        "email": "",
+        "address": "2528 Eldorado Ln Naperville, IL 60564",
+        "claim_number": "1365J084B",
+        "reports": []
+    },
+    {
+        "first_name": "Francis",
+        "last_name": "Brown",
+        "project_name": "Farmers Insurance",
+        "phone": "+1 708 955 0705",
+        "email": "",
+        "address": "736 W Sunset Dr Glenwood, IL 60425",
+        "claim_number": "n/a",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "May 14, 2024, 2:51 PM",
+                "note": "Bj and I met homeowner. BJ carpentry started project. Homeowner signed SA and WA contracts."
+            },
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "May 14, 2024, 2:50 PM",
+                "note": "Received deposit of $10,080.62. First layer of drywall mud has been applied. New estimate for supplement has been sent off to agent."
+            }
+        ]
+    },
+    {
+        "first_name": "Calvin",
+        "last_name": "Konosha",
+        "project_name": "Progressive",
+        "phone": "+1 773 814 8675",
+        "email": "",
+        "address": "15731 Kedzie Ave Markham, IL 60428",
+        "claim_number": "1307064-241435-115101",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 7, 2024, 1:25 PM",
+                "note": "Painter has returned today.  Painting will continue through the week.  Currently reaching out to carpet installer for scheduling."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:13 PM",
+                "note": "Foreman Tom suffered a seizure and has been in the hospital.  Stopped by site today to see where the job stands.  Supplements will be submitted for the upper fight of stairs and fire alarm system t..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 24, 2024, 8:37 AM",
+                "note": "Mud and taping is continuing to by followed by painting.  Homeowner has confirmed she wants to paint the basement floor \"grey\" and only wants carpet on the stairs."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 18, 2024, 12:43 PM",
+                "note": "Drywall is complete.  Guys will be returning Saturday to begin mud and Tape.  Homeowner may with to only paint the floor in the basement instead of carpet."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 15, 2024, 2:37 PM",
+                "note": "Drywall guys were there Saturday but no one answered the door so they left.  Gys returned today to start drywall."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 15, 2024, 9:15 AM",
+                "note": "Drywall installation began on Saturday and will continue through the week.  Tom from BuildPro is currently gather a bid for additional framing that will be submitted as a supplement."
+            }
+        ]
+    },
+    {
+        "first_name": "Anthony ",
+        "last_name": "Camacho",
+        "project_name": "Grange Ins",
+        "phone": "+1 262 716 5294",
+        "email": "",
+        "address": "963 W 72nd Dr Merrillville, IN 46410",
+        "claim_number": "ZHM003684295-1",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 1, 2024, 9:25 AM",
+                "note": "Customer is going to reach out to Brendan for extra out of pocket work and once done ill do an initial, get docs signed, collect funds and begin gathering materials for Mr Camachos property."
+            }
+        ]
+    },
+    {
+        "first_name": "William",
+        "last_name": "Cantrell",
+        "project_name": "The Hanover",
+        "phone": "+1 815 370 9411",
+        "email": "",
+        "address": "1506 W Hawkins St Kankakee, IL 60901",
+        "claim_number": "85-00533759",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 9, 2024, 2:18 PM",
+                "note": "Job is complete.  Met with homeowner and sogned CoC.  We will be waiting for final payment from Sedgewick."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 7, 2024, 1:26 PM",
+                "note": "Andy is planning on finishing the fence tomorrow weather permiting.  Once fence is installed, job should be complete."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 2, 2024, 2:13 PM",
+                "note": "Andy has found a match for the fencing and will schedule install as soon as material arrives."
+            }
+        ]
+    },
+    {
+        "first_name": "Jaki",
+        "last_name": "DiSilvestro",
+        "project_name": "Openly Insurance",
+        "phone": "+1 630 285 1182",
+        "email": "nikik@att.net",
+        "address": "1426 Spyglass Ct Itasca, IL 60143",
+        "claim_number": "H0-2024-496476855",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 6, 2024, 8:43 AM",
+                "note": "Mitigation is complete and estimate was approved. We\u2019re currently waiting for a reply from adjuster on payment status. Also awaiting approval from the adjuster regarding our repair estimate. Will u..."
+            }
+        ]
+    },
+    {
+        "first_name": "First church of",
+        "last_name": "God",
+        "project_name": "Brotherhood Mutual Insurance",
+        "phone": "",
+        "email": "",
+        "address": "134 E. 43rd Ave Gary, IN 46409",
+        "claim_number": "064-8387",
+        "reports": []
+    },
+    {
+        "first_name": "Chris",
+        "last_name": "Fowler",
+        "project_name": "State Farm",
+        "phone": "+1 630 723 4483",
+        "email": "",
+        "address": "11733 Azure Dr Frankfort, IL 60423",
+        "claim_number": "N/A",
+        "reports": []
+    },
+    {
+        "first_name": "Isela",
+        "last_name": "Gaspar",
+        "project_name": "State Farm",
+        "phone": "",
+        "email": "igaspar@sudlerchicago.com",
+        "address": "3900 N Pine Grove Ave Chicago, IL 60613",
+        "claim_number": "N/A",
+        "reports": []
+    },
+    {
+        "first_name": "Carol",
+        "last_name": "Gesior",
+        "project_name": "Liberty Mutual",
+        "phone": "",
+        "email": "",
+        "address": "30 W Turner Ave Roselle, IL 60172",
+        "claim_number": "0",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 9, 2024, 2:20 PM",
+                "note": "Demo is nearing completion.  Recent rains have held up demo.  Currently waiting on lumber bid from the supplier to order material."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:16 PM",
+                "note": "Chris and John will be on site Monday to spray down basement masonry.  Next week we will verify if power is restored to order septic and well inspection.  If power is not restored, once mechanical ..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 26, 2024, 8:54 AM",
+                "note": "Currently awaiting mechanical bids from Satus."
+            }
+        ]
+    },
+    {
+        "first_name": "Amie",
+        "last_name": "Gonzalez",
+        "project_name": "Pro Star",
+        "phone": "+1 815 919 2345",
+        "email": "amiegonzalez1@gmail.com",
+        "address": "612 Oneida St Joliet, IL 60435-7307",
+        "claim_number": "230092787",
+        "reports": []
+    },
+    {
+        "first_name": "Deb",
+        "last_name": "Gunter",
+        "project_name": "State Farm",
+        "phone": "+1 215 582 5225",
+        "email": "",
+        "address": "225 E 89th Place Chicago 60619",
+        "claim_number": "1345N794K",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 9, 2024, 2:21 PM",
+                "note": "Perma Seal is visiting the residence tomorrow to diagnose leakage issue."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 7, 2024, 1:27 PM",
+                "note": "No change."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:18 PM",
+                "note": "Final work scope has been sent to homeowner for review.  Waiting for response to schedule final.  Seepage was discovered in the basement.  If supplement is approved, we will hold off on supplement ..."
+            }
+        ]
+    },
+    {
+        "first_name": "James",
+        "last_name": "Gyann",
+        "project_name": "Allstate",
+        "phone": "+1 708 744 5640",
+        "email": "jamielucio1@gmail.com",
+        "address": "10348 Interlochen Dr Palos Hills, IL 60465",
+        "claim_number": "0733186217",
+        "reports": []
+    },
+    {
+        "first_name": "Guillermo",
+        "last_name": "Hernandez",
+        "project_name": "STATE FARM",
+        "phone": "+1 773 349 0846",
+        "email": "",
+        "address": "8834 S Houston Ave Apt 1 Chicago, IL 60617",
+        "claim_number": "163G991H",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 7, 2024, 1:30 PM",
+                "note": "Roof is complete.  Currently waiting on a few consecutive days of good weather for siding install."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 2, 2024, 2:16 PM",
+                "note": "Roof work has begun today.  Once roof is complete, we will schedule siding repairs.  We will need 3-4 days of good weather for siding which may complicate scheduling."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 1, 2024, 9:15 AM",
+                "note": "Roof was scheduled for today, but the crew had an issue with sime equipment.  Roof is rescheduked fir tomorrow weather permitting."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 26, 2024, 8:57 AM",
+                "note": "Rain is predicted for today.  Roof work will be rescheduled for next week."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 24, 2024, 8:43 AM",
+                "note": "Roof work may begin on Friday weather depending.  After roof work, siding repairs will be scheduled but we need a few consecutive days of decent weather due to the complex nature of the job."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 18, 2024, 12:48 PM",
+                "note": "Andy has been at the site and reviewed the job.  Waiting to hear from Andy in regards to scheduling.  Due to the complex nature of the repairs, we will need a few days of good weather to begin repa..."
+            }
+        ]
+    },
+    {
+        "first_name": "Linda",
+        "last_name": "Hoffmeyer",
+        "project_name": "N/A",
+        "phone": "",
+        "email": "sahoffmeyer1@yahoo.com",
+        "address": "25241 S Sangamon St Crete, IL 60417",
+        "claim_number": "N/A",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 15, 2024, 9:37 AM",
+                "note": "Waiting for concrete to settle and dry then we can start gathering materials and begin work as needed. Possibly one more week of waiting than we can begin."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 29, 2024, 11:45 AM",
+                "note": "Mitigation is complete and Permaseal is coming out Friday to resolve the issue than we can come in after to do repairs on her property. Will update once Permaseal comes out."
+            }
+        ]
+    },
+    {
+        "first_name": "Rhonda",
+        "last_name": "Holliday",
+        "project_name": "State Farm",
+        "phone": "+1 219 201 3805",
+        "email": "",
+        "address": "8626 Mckinley St Merrillville, IN 46410",
+        "claim_number": "1455G888M",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 16, 2024, 9:33 AM",
+                "note": "Spoke with Ronda and mortgage company has received all of our documentation. She's waiting on the them to send back signed check. Once received payment will be made in full and job will be able to ..."
+            }
+        ]
+    },
+    {
+        "first_name": "Mike",
+        "last_name": "Hudek",
+        "project_name": "State Farm",
+        "phone": "+1 708 774 5070",
+        "email": "",
+        "address": "15255 S 94th Ave#500 Orland Park, IL 60462",
+        "claim_number": "n/a",
+        "reports": [
+            {
+                "title": "Ryan DeYoung added a new Daily Log",
+                "date": "May 13, 2024, 7:38 PM",
+                "note": "Weekly Update: Carpenter crews started this week. The goal is to have the first floor casings and baseboard installed along with all the doors. Need to meet with the homeowner this week so we can s..."
+            },
+            {
+                "title": "Angela Bermudez added a new Daily Log",
+                "date": "May 13, 2024, 10:48 AM",
+                "note": "Jason from best Hardwoods is returning today to touch up flooring.  Davewill be returning Thursday or Friday, depending on how the flooring goes, to finish kitchen work."
+            },
+            {
+                "title": "Angela Bermudez added a new Daily Log",
+                "date": "May 13, 2024, 10:46 AM",
+                "note": "Flooring is complete sans a few touch-ups.  Jason from Best Hardwoods will be returning tomorrow to address issues.  Depending on how the flooring goes tomorrow, crew should be returning next week ..."
+            }
+        ]
+    },
+    {
+        "first_name": "Iwan ",
+        "last_name": "Stanislaw",
+        "project_name": "State Farm",
+        "phone": "",
+        "email": "",
+        "address": "12241 S Spencer St Alsip, IL 60803",
+        "claim_number": "1364X627G",
+        "reports": []
+    },
+    {
+        "first_name": "Janice ",
+        "last_name": "Kessl",
+        "project_name": "n/a",
+        "phone": "+1 630 926 8454",
+        "email": "",
+        "address": "919 W Briarcliff Rd Bolingbrook, IL 60440",
+        "claim_number": "n/a",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 6, 2024, 8:41 AM",
+                "note": "Mitigation is complete and awaiting final approval from adjuster for payment status. No repairs needed. Customer had her own contractor for repairs."
+            }
+        ]
+    },
+    {
+        "first_name": "Atlas",
+        "last_name": "Khan",
+        "project_name": "Erie",
+        "phone": "",
+        "email": "",
+        "address": "342 Erie Circle Bloomingdale, IL 60108",
+        "claim_number": "A00004358042",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 19, 2024, 10:37 AM",
+                "note": "conduit is almost finished"
+            }
+        ]
+    },
+    {
+        "first_name": "Darlene",
+        "last_name": "Klages",
+        "project_name": "Travelers",
+        "phone": "",
+        "email": "",
+        "address": "2903 Flossmoor Road Flossmoor, IL 60422",
+        "claim_number": "0",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 19, 2024, 10:50 AM",
+                "note": "waiting on new windows, ready for drywall"
+            }
+        ]
+    },
+    {
+        "first_name": "Kenneth",
+        "last_name": "Kujak",
+        "project_name": "Assurant Insurance",
+        "phone": "",
+        "email": "",
+        "address": "1473 Devine Dr Glendale Heights, IL 60139",
+        "claim_number": "002017736773",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 9, 2024, 2:22 PM",
+                "note": "Roof work has begun.  Framing and mechanicals are scheduled to begin next week."
+            }
+        ]
+    },
+    {
+        "first_name": "David",
+        "last_name": "Labuda",
+        "project_name": "Allstate/Non-TPA",
+        "phone": "+1 715 212 8825",
+        "email": "",
+        "address": "10352 Interiochen Drive Palos Hills, IL 60465",
+        "claim_number": "0733172084",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 1, 2024, 9:26 AM",
+                "note": "Gathering materials for Mr Labudas property. Once gathered we can begin work."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 18, 2024, 12:02 PM",
+                "note": "Since supplement was approved I met Mr Labuda and received a second deposit which was brought to the office shortly after. Will begin to gather materials needed for this project and following, will..."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 17, 2024, 11:23 AM",
+                "note": "Still waiting for homeowner to return my call regarding newly approved supplement."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 15, 2024, 12:00 PM",
+                "note": "Running total $14,666.03\nPaid to date $5,000\nRemaining balance $9,666.03"
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 15, 2024, 12:00 PM",
+                "note": "Supplement was approved. Will get L&L a deposit to begin. Also waiting on a call back from homeowner to try and schedule and update him on the supplement. Slightly difficult to get ahold of."
+            }
+        ]
+    },
+    {
+        "first_name": "Sonu",
+        "last_name": "Marchioretto",
+        "project_name": "N/A",
+        "phone": "+1 630 947 2473",
+        "email": "",
+        "address": "211 E Ohio St Chicago, IL 60611",
+        "claim_number": "N/A",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 15, 2024, 9:36 AM",
+                "note": "Will do a walkthrough with management and Francisco today around 12-1pm to hopefully finalize the waiting process. Will then be able to start gathering the materials and get working on getting Sony..."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 6, 2024, 8:37 AM",
+                "note": "Did a walkthrough with the customer, Paul and I and gathered ideas necessary to begin the project. Got documents signed as well as a 50% deposit. Customer has also texted me material selections so ..."
+            }
+        ]
+    },
+    {
+        "first_name": "Calvin",
+        "last_name": "McClean",
+        "project_name": "Allstate",
+        "phone": "+1 910 616 0165",
+        "email": "",
+        "address": "124 E. 43rd Avenue Gary, IN 46409",
+        "claim_number": "0",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 19, 2024, 10:38 AM",
+                "note": "no changes since 3/11, water in basement"
+            }
+        ]
+    },
+    {
+        "first_name": "Patricia",
+        "last_name": "McGill",
+        "project_name": "USAA",
+        "phone": "+1 773 600 2153",
+        "email": "trish.o.mcgill@gmail.com",
+        "address": "9621 S Bell Ave Chicago, IL 60643",
+        "claim_number": "016622030-802",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 9, 2024, 2:29 PM",
+                "note": "Dave is currently trying to get a hold of homeowner to schedule final kitchen painting."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 7, 2024, 1:33 PM",
+                "note": "Jason from best Hardwoods is returning today to touch up flooring.  Davewill be returning Thursday or Friday, depending on how the flooring goes, to finish kitchen work."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:21 PM",
+                "note": "Jason from best Hardwoods returned today to address issues and apply another top coat.  David will be returning Tuesday to complete kitchen painting."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 2, 2024, 2:20 PM",
+                "note": "Flooring is complete sans a few touch-ups.  Jason from Best Hardwoods will be returning tomorrow to address issues.  Depending on how the flooring goes tomorrow, crew should be returning next week ..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 1, 2024, 9:17 AM",
+                "note": "Flooring work has started.  Once flooring is complete, crew will be back next week to complete kitchen painting."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 29, 2024, 1:22 PM",
+                "note": "Flooring is scheduled for tomorrow and should take 3 days."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 19, 2024, 11:08 AM",
+                "note": "All repairs except floor refinishing should be complete by early next week.  Currently floor refinisher is scheduled for the 30th.  Homeowners plan on staying at a hotel will the refinishing is tak..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 18, 2024, 12:53 PM",
+                "note": "Met with homeowner, Brendan, and Jason from Best Hardwoods.  Jason has reveiwed the floor with homeowner and will refinish it.  Wating to hear from Jason to schedule.  Once floor refinishing is com..."
+            }
+        ]
+    },
+    {
+        "first_name": "Jordan",
+        "last_name": "McMillan",
+        "project_name": "AFICS",
+        "phone": "",
+        "email": "",
+        "address": "1320 Jamie Ln Homewood, IL 60430",
+        "claim_number": "01004248959",
+        "reports": []
+    },
+    {
+        "first_name": "Daniel",
+        "last_name": "McQuillan",
+        "project_name": "N/A",
+        "phone": "+1 708 655 8314",
+        "email": "",
+        "address": "15840 Primrose St New Lenox, IL 60451",
+        "claim_number": "AC29278",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 6, 2024, 8:39 AM",
+                "note": "Received check from insured and are set to begin work the week of the 13th."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 1, 2024, 9:24 AM",
+                "note": "Will meet with customer Friday at 1pm to pickup check and will begin gathering materials and once those are in well begin work."
+            },
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 23, 2024, 3:48 PM",
+                "note": "Did initial today with Alex from MES, and went through estimate and answered any questions or concerns, customer had at that time. Paperwork will be signed electronically today and sent back via em..."
+            }
+        ]
+    },
+    {
+        "first_name": "Jesus",
+        "last_name": "Mercado",
+        "project_name": "Liberty Mutual",
+        "phone": "+1 312 823 7544",
+        "email": "mercado412@gmail.com",
+        "address": "4730 S Springfield Ave Chicago, IL 60632",
+        "claim_number": "N/A",
+        "reports": []
+    },
+    {
+        "first_name": "Robert",
+        "last_name": "Moffet",
+        "project_name": "Liberty Mutual",
+        "phone": "",
+        "email": "",
+        "address": "22 E. Rocket Circle Park Forest, IL 60466",
+        "claim_number": "0",
+        "reports": []
+    },
+    {
+        "first_name": "",
+        "last_name": "",
+        "project_name": "N/A",
+        "phone": "",
+        "email": "",
+        "address": "2800 Country Club Dr Olympia Fields, IL 60461",
+        "claim_number": "N/A",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 24, 2024, 12:32 PM",
+                "note": "Previous floor sealant/paint is being removed"
+            }
+        ]
+    },
+    {
+        "first_name": "Jennifer",
+        "last_name": "Ojeda",
+        "project_name": "N/A",
+        "phone": "+1 815 671 5686",
+        "email": "",
+        "address": "9317 84th Ave Hickory Hills, IL 60457",
+        "claim_number": "N/A",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 24, 2024, 1:17 PM",
+                "note": "Pairing in back room is being finished. Siding, upstairs bathroom, vent covers, and door knobs need to be finished"
+            }
+        ]
+    },
+    {
+        "first_name": "Gloria",
+        "last_name": "Pagan",
+        "project_name": "State Farm",
+        "phone": "+1 773 314 7181",
+        "email": "",
+        "address": "4759 S Luna Ave Chicago, IL 60638",
+        "claim_number": "1361S785C",
+        "reports": []
+    },
+    {
+        "first_name": "Robert",
+        "last_name": "Panozzo",
+        "project_name": "State Farm/CC",
+        "phone": "+1 219 743 6157",
+        "email": "",
+        "address": "3881 Brookside Drive Crown Point, IN 46307",
+        "claim_number": "1456G335H",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 7, 2024, 1:37 PM",
+                "note": "Rough-in mechanical work is done.  Framing is continuing.  Further supplements will be submitted for: additional plumbing, additional stucco work, thickness of basement paneling, basement and front..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:24 PM",
+                "note": "Gas service has been restored and water is scheduled to be turned back on Monday.  Still waiting stucco repair bid along with photos of additional damage to the doors that was discovered to submit ..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 30, 2024, 1:51 PM",
+                "note": "Plumber is working today.  Homeowner will be in contact with the county inspector to verify it is okay to restore gas service.  Once inspection is complete, homeowner will contact nipsco to restore..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 26, 2024, 2:47 PM",
+                "note": "HVAC and electrical rough ins are complete.  Framing has begun.  Additional damages have been discovered and sent to Eddie for a supplement.  Plumbing should be complete next week.  Once mechanical..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 19, 2024, 11:11 AM",
+                "note": "Mechanical supplements have been approved.  Electrician is scheduled to start Monday.  Waiting to hear from HVAC and plumber for scheduling.  Framing work is also scheduled to begin next week.  Onc..."
+            }
+        ]
+    },
+    {
+        "first_name": "Peter",
+        "last_name": "Machine Works",
+        "project_name": "n/a",
+        "phone": "+1 708 496 3005",
+        "email": "petersmachineworks@yahoo.com",
+        "address": "8277 S 86th Ct Justice, IL 60458",
+        "claim_number": "n/a",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "May 1, 2024, 9:26 AM",
+                "note": "ice blasting is in progress."
+            }
+        ]
+    },
+    {
+        "first_name": "Joann",
+        "last_name": "Phillips",
+        "project_name": "N/A",
+        "phone": "+1 815 954 8244",
+        "email": "",
+        "address": "3081 River Rd Kankakee, IL 60901",
+        "claim_number": "163G39K",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:26 PM",
+                "note": "Supplement and estimate revisions are on going.  Waiting for complete work scope to resubmit to the town for permit.  Also waiting for complete work scope to submit to crews and mechanicals."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 1, 2024, 9:19 AM",
+                "note": "vbrendan is currently working with the adjuster regarding supplements.  Michelle is waiting for mechanicals to register to complete permit request.  Waiting for complete work scope and permit to sc..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 26, 2024, 1:57 PM",
+                "note": "Met with clients, signed agreements, and collected deposit of 50k.  Brendan discovered additional damages while we were there, which will be submitted as a supplement.  We are also working on getti..."
+            }
+        ]
+    },
+    {
+        "first_name": "Carlos",
+        "last_name": "Rhodes",
+        "project_name": "State Farm",
+        "phone": "+1 773 330 6044",
+        "email": "",
+        "address": "1212 E. 164th PL South Holland, IL 60473",
+        "claim_number": "?",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 23, 2024, 12:03 PM",
+                "note": "Roof is finished"
+            },
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "Apr 19, 2024, 10:44 AM",
+                "note": "soffit is being removed and roof is being finished"
+            }
+        ]
+    },
+    {
+        "first_name": "Holley",
+        "last_name": "Richert",
+        "project_name": "?",
+        "phone": "+1 708 738 0273",
+        "email": "",
+        "address": "9455 Henry St. Dyer, IN 46311",
+        "claim_number": "?",
+        "reports": []
+    },
+    {
+        "first_name": "Jafri",
+        "last_name": "Rizwan",
+        "project_name": "Liberty Mutual",
+        "phone": "+1 708 514 1023",
+        "email": "",
+        "address": "7830 Keystone Rd Orland Park, IL 60462",
+        "claim_number": "054781611",
+        "reports": [
+            {
+                "title": "Cain  Devale added a new Daily Log",
+                "date": "May 7, 2024, 1:28 PM",
+                "note": "Homeowner primarily lives in Arizona. Contracts have been sent via email to sign. Sent homeowner estimate so he can review contracts and estimate with insurance agent. Currently waiting on signed c..."
+            }
+        ]
+    },
+    {
+        "first_name": "Steve",
+        "last_name": "Rowe",
+        "project_name": "State Farm",
+        "phone": "+1 630 567 1121",
+        "email": "",
+        "address": "819 59th St Downers Grove, IL 60519",
+        "claim_number": "13-50R2-39Q",
+        "reports": []
+    },
+    {
+        "first_name": "John ",
+        "last_name": "Sass",
+        "project_name": "Allstate/SDG",
+        "phone": "+1 708 214 3557",
+        "email": "johnsass1945@gmail.com",
+        "address": "3001 N. 15902E Rd. Momence, IL 60954",
+        "claim_number": "0671039428",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 18, 2024, 12:53 PM",
+                "note": "Siding is now expexted to arrive May 21st."
+            }
+        ]
+    },
+    {
+        "first_name": "Susan",
+        "last_name": "Shultz",
+        "project_name": "Liberty Mutual",
+        "phone": "+1 219 613 3932",
+        "email": "",
+        "address": "27 Meadow Ln Merrillville, IN 46410",
+        "claim_number": "053056818",
+        "reports": [
+            {
+                "title": "Chris G added a new Daily Log",
+                "date": "Apr 16, 2024, 10:00 AM",
+                "note": "Customer is out of town and will be out of town until May 11th hopefully. She is taking care of a family member and once back in town will make selections and move forward with project. Will update..."
+            }
+        ]
+    },
+    {
+        "first_name": "Paul",
+        "last_name": "Spector",
+        "project_name": "Liberty Mutual ",
+        "phone": "+1 314 265 0109",
+        "email": "",
+        "address": "1319 Oak Park Ave Berwyn, IL 60402",
+        "claim_number": "055915416",
+        "reports": [
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "May 3, 2024, 12:33 PM",
+                "note": "Estimate revisions have been approved.  We are currently planning a start date of 5/20/24."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 30, 2024, 1:41 PM",
+                "note": "Met with homeowner, signed agreements, and collected deposit of $6,153.87.  Homeowner would like some items added to the current estimate.  The additions have been sent to Brendan to make the adjus..."
+            },
+            {
+                "title": "Jason Brendle added a new Daily Log",
+                "date": "Apr 26, 2024, 2:15 PM",
+                "note": "Homeowner has selected cabinets and has approved revised estimate from Brendan.  Meeting with them early next week to sign contracts and collected deposit.  Once contracts are signed, work will be ..."
+            }
+        ]
+    },
+    {
+        "first_name": "Diven",
+        "last_name": "Sulkar",
+        "project_name": "State Farm",
+        "phone": "+1 630 965 3466",
+        "email": "dsulkar@yahoo.com",
+        "address": "29 W139 Childs St West Chicago, IL",
+        "claim_number": "1335B262K",
+        "reports": []
+    },
+    {
+        "first_name": "Lori",
+        "last_name": "Wheeler",
+        "project_name": "WRG/CC",
+        "phone": "+1 219 204 0595",
+        "email": "",
+        "address": "323 N Newton Street Goodland, IN 47948",
+        "claim_number": "123670",
+        "reports": []
+    },
+    {
+        "first_name": "Al",
+        "last_name": "Torres",
+        "project_name": "Country Financial",
+        "phone": "",
+        "email": "",
+        "address": "205 Arrowhead Dr Shorewood, IL 60404",
+        "claim_number": "600-0685288",
+        "reports": []
+    },
+    {
+        "first_name": "Colton",
+        "last_name": "Wilde",
+        "project_name": "State Farm",
+        "phone": "+1 630 542 3923",
+        "email": "",
+        "address": "2 Lakewood Ct Bolingbrook, IL 60440",
+        "claim_number": "0",
+        "reports": []
+    },
+    {
+        "first_name": "Bryant",
+        "last_name": "Werza",
+        "project_name": "State Farm",
+        "phone": "",
+        "email": "surfsup427@gmail.com",
+        "address": "3801 124th Pl Alsip, IL 60803",
+        "claim_number": "1337W125M",
+        "reports": []
+    }
+]
