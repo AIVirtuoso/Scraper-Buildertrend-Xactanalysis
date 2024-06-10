@@ -45,8 +45,8 @@ def extract_length(content: str):
 
 class WebScraper:
     # Create a WebScraper instance
-    def __init__(self, builder_user, builder_pass, xact_user, xact_pass):
-        self.driver = self.initialize_driver()
+    def __init__(self, builder_user, builder_pass, xact_user, xact_pass, profile):
+        self.driver = self.initialize_driver(profile)
         self.wait = WebDriverWait(self.driver, 30)  # Added explicit wait
         self.reports = []
         self.builder_user = builder_user
@@ -55,7 +55,7 @@ class WebScraper:
         self.xact_pass = xact_pass
 
     # Init the WebScraper instance
-    def initialize_driver(self):
+    def initialize_driver(self, profile):
         try:
             if is_port_in_use(9222):
                 kill_process_on_port(9222)
@@ -64,7 +64,7 @@ class WebScraper:
 
         command = [
         "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-        "--user-data-dir=C:/SeleniumChromeProfile",
+        f"--user-data-dir={profile}",
         "--remote-debugging-port=9222"
         ]
         subprocess.Popen(command)
@@ -131,7 +131,7 @@ class WebScraper:
 
             # Counter for scroll down
             counter = 0
-            send_buildertrend(total, 0)
+            send_buildertrend(total, total)
 
             while 1:
                 try:
@@ -150,7 +150,7 @@ class WebScraper:
                     for j in range(job_len):
                         job_text = self.driver.execute_script(f"""return document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j}].textContent""")
                         # Check if there's job list on there
-                        print("job_text ++", job_text)
+                        # print("job_text ++", job_text)
 
                         if job_text == job_content:
                             counter = counter + 1
@@ -166,12 +166,13 @@ class WebScraper:
                     self.driver.execute_script(f"""document.getElementsByClassName('ItemRowJobName flex-grow-1')[{j + 1}].click()""")
                     
                     # Scroll down the job list
-                    self.driver.execute_script(f"""document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0].scrollTo(0, 32 * {counter})""")
+                    self.driver.execute_script(f"""document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0].scrollTo(0, 26 * {counter})""")
                     
                     # Increase the counter for next scroll adjustment
                 except Exception as ex:
                     print(ex)
-            send_buildertrend(counter + 1, counter + 1)
+            send_buildertrend(total, total)
+
                 
                 
         except Exception as e:
@@ -222,14 +223,19 @@ class WebScraper:
             # Close Customer Contact Modal
             self.driver.execute_script(f"""document.querySelector('[data-testid="close"]').click()""")
 
-
+            print("customer_email: ", customer_email)
             # Project Managers (Name + Phone Number)
             project_manager_len = self.driver.execute_script(f"""return document.getElementsByClassName('AbbreviateTitle').length - 1""")
             if project_manager_len:
+                # print('here0')
                 self.driver.execute_script(f"""return document.getElementsByClassName('AbbreviateTitle')[1].click()""")
+                self.wait.until(   
+                    lambda d: d.execute_script("""return document.getElementById('firstName') != null""")
+                )
+                # print('here1')
                 project_manager_first_name = self.driver.execute_script(f"""return document.getElementById('firstName').value""")
                 project_manager_last_name = self.driver.execute_script(f"""return document.getElementById('lastName').value""")
-
+                print("project_manager_last_name: ", project_manager_last_name)
                 project_manager_phone = self.driver.execute_script(f"""return document.getElementById('phone').value""")
                 project_manager_email = self.driver.execute_script(f"""return document.getElementById('primaryEmail.emailAddress').value""")
                 self.driver.execute_script(f"""document.querySelector('[data-testid="close"]').click()""")
@@ -272,10 +278,17 @@ class WebScraper:
                 if "new Daily Log" in title:
                     # date of note
                     date = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByClassName('margin-left-sm')[0].textContent""")
-                    # project manager
-                    sender = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByTagName('span')[2].textContent""")
                     # Daily Note
-                    note = self.driver.execute_script(f"""return document.getElementsByClassName('FeedItem')[{i}].getElementsByClassName('ant-card-body')[0].textContent""")
+                    self.driver.execute_script(f"""document.getElementsByClassName('FeedItem')[{i}].getElementsByClassName('margin-left-sm')[0].click()""")
+                    self.wait.until(   
+                        lambda d: d.execute_script("""return document.getElementById('notes') != null""")
+                    )
+                    time.sleep(1)
+                    note = self.driver.execute_script(f"""return document.getElementById('notes').textContent""")
+                    self.driver.execute_script(f"""document.querySelector('[data-testid="close"]').click()""")
+                    self.wait.until(
+                        EC.invisibility_of_element_located((By.ID, 'notes'))
+                    )
                     
                     # print(f"title: {title}")
                     # print(f"date: {date}")
@@ -286,6 +299,7 @@ class WebScraper:
                         'date': date,
                         'note': note
                     })
+            print(res)
             # Append results into reports
             self.reports.append(res)
         except Exception as e:
@@ -491,15 +505,13 @@ class WebScraper:
         self.driver.close()
 
 def run_scraper(source, builder_user, builder_pass, xact_user, xact_pass):
-    scraper = WebScraper(builder_user, builder_pass, xact_user, xact_pass)
-    # db = DatabaseHandler()
-    # db.create_tables()
     if source == "BuilderTrend":    
+        scraper = WebScraper(builder_user, builder_pass, xact_user, xact_pass, "C:/SeleniumChromeProfile")
         scraper.scrape_buildertrend_website("https://buildertrend.net/")
         time.sleep(3)
         scraper.close_driver()
     else:
-        scraper = WebScraper(builder_user, builder_pass, xact_user, xact_pass)
+        scraper = WebScraper(builder_user, builder_pass, xact_user, xact_pass, "C:/SeleniumChromeProfile")
         scraper.scrape_xactanalysis_website("https://www.xactanalysis.com/")
         scraper.close_driver()
 
@@ -509,17 +521,19 @@ def run_scraper(source, builder_user, builder_pass, xact_user, xact_pass):
     # print(results)
     print("Scraping and storing data completed.")
     
-    with open("scraped_results.json", 'w') as json_file:
+    with open(f"{source}.json", 'w') as json_file:
         # Write the dictionary to the file as JSON  
         json.dump(results, json_file, indent=4)
 
     data = {}
-    with open("scraped_results.json", 'r') as file:
+    with open(f"{source}.json", 'r') as file:
         data = json.load(file)
-    print(data)
-    url = 'https://backend.getdelmar.com/api/v1/get-scraped-result'
+    # print(data)
+    # url = 'https://backend.getdelmar.com/api/v1/get-scraped-result'
 
-    # Send a POST request to the FastAPI endpoint with the JSON data
-    response = requests.post(url, json=data)
+    # # Send a POST request to the FastAPI endpoint with the JSON data
+    # response = requests.post(url, json=data)
         
     return True
+
+

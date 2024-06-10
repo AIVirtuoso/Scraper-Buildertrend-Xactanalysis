@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, BackgroundTasks
 import os
 from dotenv import load_dotenv
 
@@ -18,7 +18,7 @@ class AuthModel(BaseModel):
 router = APIRouter()
 
 @router.post('/notification')
-async def get_notification(auth: AuthModel):
+async def get_notification(background_tasks: BackgroundTasks, auth: AuthModel):
     print("start")
     print(auth.source, auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)
-    run_scraper(auth.source, auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)
+    background_tasks.add_task(run_scraper, auth.source, auth.builder_user, auth.builder_pass, auth.xact_user, auth.xact_pass)
