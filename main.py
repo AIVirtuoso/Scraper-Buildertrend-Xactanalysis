@@ -20,12 +20,12 @@ app.add_middleware(
 
 # app.mount("/static", StaticFiles(directory="static"), name="static")
 
-app.include_router(Notification.router, prefix="/buildertrend/api/v1")
+app.include_router(Notification.router, prefix="/api/v1")
 
 
-@app.get("/buildertrend")
+@app.get("/")
 async def health_checker():
     return {"status": "success"}
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=7000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=80, reload=True)
